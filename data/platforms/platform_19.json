@@ -1,0 +1,181 @@
+{
+  "platform_id": "platform_19",
+  "note": "four identical devices, one link type, no CPU variety at all. Held out: isolates scale, one rung past p11. Star from NXP_IMX95_0: NXP_IMX95_1 over eth_10g, NXP_IMX95_2 over eth_10g, NXP_IMX95_3 over eth_10g.",
+  "devices": [
+    {
+      "device_id": "NXP_IMX95_0"
+    },
+    {
+      "device_id": "NXP_IMX95_1"
+    },
+    {
+      "device_id": "NXP_IMX95_2"
+    },
+    {
+      "device_id": "NXP_IMX95_3"
+    }
+  ],
+  "cores": [
+    {
+      "core_id": "NXP_IMX95_0_C0",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C1",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C2",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C3",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C4",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C5",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_1_C0",
+      "device_id": "NXP_IMX95_1",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "NXP_IMX95_1_C1",
+      "device_id": "NXP_IMX95_1",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_1_C2",
+      "device_id": "NXP_IMX95_1",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_1_C3",
+      "device_id": "NXP_IMX95_1",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_1_C4",
+      "device_id": "NXP_IMX95_1",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_1_C5",
+      "device_id": "NXP_IMX95_1",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_2_C0",
+      "device_id": "NXP_IMX95_2",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "NXP_IMX95_2_C1",
+      "device_id": "NXP_IMX95_2",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_2_C2",
+      "device_id": "NXP_IMX95_2",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_2_C3",
+      "device_id": "NXP_IMX95_2",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_2_C4",
+      "device_id": "NXP_IMX95_2",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_2_C5",
+      "device_id": "NXP_IMX95_2",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_3_C0",
+      "device_id": "NXP_IMX95_3",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "NXP_IMX95_3_C1",
+      "device_id": "NXP_IMX95_3",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_3_C2",
+      "device_id": "NXP_IMX95_3",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_3_C3",
+      "device_id": "NXP_IMX95_3",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_3_C4",
+      "device_id": "NXP_IMX95_3",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_3_C5",
+      "device_id": "NXP_IMX95_3",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    }
+  ],
+  "links": [
+    {
+      "dev_a": "NXP_IMX95_0",
+      "dev_b": "NXP_IMX95_1",
+      "link_type": "eth_10g"
+    },
+    {
+      "dev_a": "NXP_IMX95_0",
+      "dev_b": "NXP_IMX95_2",
+      "link_type": "eth_10g"
+    },
+    {
+      "dev_a": "NXP_IMX95_0",
+      "dev_b": "NXP_IMX95_3",
+      "link_type": "eth_10g"
+    }
+  ]
+}

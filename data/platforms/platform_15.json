@@ -1,0 +1,161 @@
+{
+  "platform_id": "platform_15",
+  "note": "three devices, three CPU types. QCS and IQ are leaves, so they talk through the main device rather than directly. Star from NXP_IMX95_0: QCOM_QCS6490_0 over eth_1g, QCOM_IQ9100_0 over eth_1g.",
+  "devices": [
+    {
+      "device_id": "NXP_IMX95_0"
+    },
+    {
+      "device_id": "QCOM_QCS6490_0"
+    },
+    {
+      "device_id": "QCOM_IQ9100_0"
+    }
+  ],
+  "cores": [
+    {
+      "core_id": "NXP_IMX95_0_C0",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C1",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C2",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C3",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C4",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C5",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C0",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C1",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C2",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C3",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C4",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C5",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C6",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C7",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C0",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "os"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C1",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C2",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C3",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C4",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C5",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C6",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C7",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "isolated"
+    }
+  ],
+  "links": [
+    {
+      "dev_a": "NXP_IMX95_0",
+      "dev_b": "QCOM_QCS6490_0",
+      "link_type": "eth_1g"
+    },
+    {
+      "dev_a": "NXP_IMX95_0",
+      "dev_b": "QCOM_IQ9100_0",
+      "link_type": "eth_1g"
+    }
+  ]
+}

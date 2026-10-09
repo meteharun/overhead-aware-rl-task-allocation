@@ -1,0 +1,10 @@
+# core pipeline: timing model, allocators, training, thesis figures
+numpy
+torch
+matplotlib
+networkx
+pillow
+
+# slide and video generation only (scripts/slides)
+# python-pptx
+# opencv-python

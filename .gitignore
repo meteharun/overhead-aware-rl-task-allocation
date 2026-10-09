@@ -1,0 +1,36 @@
+# ---- generated results: large, and regenerable (see README) ----
+data/allocations/
+data/tasksets/tasksets.jsonl
+data/tasksets/index.json
+out/runs/
+
+# ---- derived figures and presentation material ----
+out/platforms/
+out/tasksets/
+out/allocations/
+out/slides/
+out/videos/
+
+# ---- thesis document, diagram sources, presentations ----
+Thesis_MeteHarunAkcay.pdf
+*.pptx
+*.drawio
+presentation.md
+keep_awake.py
+
+# ---- large template and production data ----
+reference/Template presentazione1.pptx
+reference/STAMP*.csv
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ---- local tooling ----
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

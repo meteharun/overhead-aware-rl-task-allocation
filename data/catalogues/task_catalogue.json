@@ -1,0 +1,69 @@
+{
+  "catalogue_id": "statcom_v1",
+  "note": "50 codes. period_us is fixed per code. execution times live in data/exec_table.json, keyed by id. cost_class is a relative ordering only, no microseconds implied.",
+
+  "groups": ["measurement", "protection", "control", "actuation", "comms", "supervisory", "telemetry", "analytics"],
+  "roles": ["source", "mid", "sink"],
+  "cost_classes": ["light", "medium", "heavy"],
+
+  "codes": [
+    { "id": "T1",  "code": "io_ingest",         "period_us": 100,  "group": "measurement", "role": "source", "cost_class": "medium", "description": "sampled value / field measurement ingest into ring buffer" },
+    { "id": "T2",  "code": "adc_scan",          "period_us": 100,  "group": "measurement", "role": "source", "cost_class": "medium", "description": "raw ADC channel scan and de-interleave" },
+    { "id": "T3",  "code": "encoder_decode",    "period_us": 100,  "group": "measurement", "role": "source", "cost_class": "light",  "description": "resolver or encoder angle decode" },
+    { "id": "T4",  "code": "signal_cond",       "period_us": 100,  "group": "measurement", "role": "mid",    "cost_class": "medium", "description": "scaling, plausibility check, anti-alias FIR" },
+    { "id": "T5",  "code": "sample_align",      "period_us": 100,  "group": "measurement", "role": "mid",    "cost_class": "light",  "description": "time-align multi-channel samples to TAI" },
+    { "id": "T6",  "code": "crc_verify",        "period_us": 100,  "group": "measurement", "role": "mid",    "cost_class": "light",  "description": "frame CRC and integrity check" },
+
+    { "id": "T7",  "code": "fast_protection",   "period_us": 100,  "group": "protection",  "role": "mid",    "cost_class": "light",  "description": "over/under voltage, bad quality, missing data" },
+    { "id": "T8",  "code": "overcurrent_trip",  "period_us": 100,  "group": "protection",  "role": "mid",    "cost_class": "light",  "description": "instantaneous overcurrent comparator" },
+    { "id": "T9",  "code": "dclink_monitor",    "period_us": 100,  "group": "protection",  "role": "mid",    "cost_class": "light",  "description": "dc link voltage and ripple monitor" },
+    { "id": "T10", "code": "gate_driver_check", "period_us": 100,  "group": "protection",  "role": "mid",    "cost_class": "light",  "description": "gate driver fault status poll" },
+    { "id": "T11", "code": "interlock_eval",    "period_us": 100,  "group": "protection",  "role": "mid",    "cost_class": "light",  "description": "hardware interlock evaluation" },
+    { "id": "T12", "code": "phase_imbalance",   "period_us": 100,  "group": "protection",  "role": "mid",    "cost_class": "light",  "description": "phase imbalance detection" },
+    { "id": "T13", "code": "watchdog_kick",     "period_us": 100,  "group": "protection",  "role": "sink",   "cost_class": "light",  "description": "watchdog service and liveness stamp" },
+
+    { "id": "T14", "code": "clarke_park",       "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "light",  "description": "abc to dq0 transform" },
+    { "id": "T15", "code": "inverse_park",      "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "light",  "description": "dq to abc transform for modulation" },
+    { "id": "T16", "code": "pll_track",         "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "medium", "description": "synchronous reference frame PLL phase tracking" },
+    { "id": "T17", "code": "inner_control",     "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "medium", "description": "inner control loop, regulator and modulation update" },
+    { "id": "T18", "code": "current_regulator", "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "medium", "description": "inner current PI regulator" },
+    { "id": "T19", "code": "voltage_regulator", "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "light",  "description": "dc link voltage outer loop" },
+    { "id": "T20", "code": "droop_control",     "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "light",  "description": "reactive power droop" },
+    { "id": "T21", "code": "antiwindup",        "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "light",  "description": "integrator anti-windup and saturation handling" },
+    { "id": "T22", "code": "rate_limiter",      "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "light",  "description": "setpoint slew limiting" },
+    { "id": "T23", "code": "harmonic_extract",  "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "heavy",  "description": "selective harmonic extraction, resonant filter bank" },
+    { "id": "T24", "code": "negseq_extract",    "period_us": 100,  "group": "control",     "role": "mid",    "cost_class": "medium", "description": "negative sequence extraction" },
+
+    { "id": "T25", "code": "pwm_modulator",     "period_us": 100,  "group": "actuation",   "role": "mid",    "cost_class": "medium", "description": "space vector PWM duty computation" },
+    { "id": "T26", "code": "deadtime_comp",     "period_us": 100,  "group": "actuation",   "role": "mid",    "cost_class": "light",  "description": "dead time compensation" },
+    { "id": "T27", "code": "actuator_commit",   "period_us": 100,  "group": "actuation",   "role": "sink",   "cost_class": "light",  "description": "output dispatch and safety command commit" },
+
+    { "id": "T28", "code": "sv_decode",         "period_us": 100,  "group": "comms",       "role": "source", "cost_class": "medium", "description": "IEC 61850 sampled value decode" },
+    { "id": "T29", "code": "goose_publish",     "period_us": 100,  "group": "comms",       "role": "sink",   "cost_class": "medium", "description": "IEC 61850 GOOSE fast publish" },
+
+    { "id": "T30", "code": "tfr_trigger",       "period_us": 100,  "group": "telemetry",   "role": "mid",    "cost_class": "light",  "description": "TFR event latch and metadata capture" },
+
+    { "id": "T31", "code": "power_calc",        "period_us": 500,  "group": "measurement", "role": "mid",    "cost_class": "medium", "description": "active and reactive power computation" },
+    { "id": "T32", "code": "rms_calc",          "period_us": 500,  "group": "measurement", "role": "mid",    "cost_class": "medium", "description": "true RMS over sliding window" },
+    { "id": "T33", "code": "thd_calc",          "period_us": 500,  "group": "measurement", "role": "mid",    "cost_class": "heavy",  "description": "total harmonic distortion over an FFT window" },
+    { "id": "T34", "code": "flicker_meter",     "period_us": 500,  "group": "measurement", "role": "mid",    "cost_class": "heavy",  "description": "IEC 61000-4-15 flicker measurement" },
+    { "id": "T35", "code": "sync_check",        "period_us": 500,  "group": "protection",  "role": "mid",    "cost_class": "light",  "description": "synchrocheck before breaker close" },
+    { "id": "T36", "code": "state_estimator",   "period_us": 500,  "group": "control",     "role": "mid",    "cost_class": "heavy",  "description": "grid state estimator update" },
+    { "id": "T37", "code": "mmc_balancing",     "period_us": 500,  "group": "control",     "role": "mid",    "cost_class": "heavy",  "description": "submodule capacitor voltage sorting and balancing" },
+    { "id": "T38", "code": "breaker_control",   "period_us": 500,  "group": "actuation",   "role": "sink",   "cost_class": "light",  "description": "breaker command sequencing" },
+    { "id": "T39", "code": "cooling_control",   "period_us": 500,  "group": "actuation",   "role": "sink",   "cost_class": "light",  "description": "fan and pump cooling loop" },
+    { "id": "T40", "code": "modbus_poll",       "period_us": 500,  "group": "comms",       "role": "source", "cost_class": "medium", "description": "Modbus SCADA poll handler" },
+
+    { "id": "T41", "code": "supervisory",       "period_us": 1000, "group": "supervisory", "role": "mid",    "cost_class": "medium", "description": "setpoint arbitration, mode transitions, fallback state machine" },
+    { "id": "T42", "code": "ipc_broker",        "period_us": 1000, "group": "supervisory", "role": "mid",    "cost_class": "medium", "description": "IPC broker, ownership checks, sequence validation" },
+    { "id": "T43", "code": "alarm_manager",     "period_us": 1000, "group": "supervisory", "role": "sink",   "cost_class": "medium", "description": "alarm aggregation, debounce and priority" },
+    { "id": "T44", "code": "rt_comms",          "period_us": 1000, "group": "comms",       "role": "mid",    "cost_class": "medium", "description": "IEC 61850 SV and GOOSE encode/decode hot path" },
+    { "id": "T45", "code": "mms_server",        "period_us": 1000, "group": "comms",       "role": "sink",   "cost_class": "heavy",  "description": "IEC 61850 MMS server and report generation" },
+
+    { "id": "T46", "code": "telemetry",         "period_us": 2000, "group": "telemetry",   "role": "mid",    "cost_class": "medium", "description": "per core load, queue depth, miss counters, jitter" },
+    { "id": "T47", "code": "tfr_writer",        "period_us": 2000, "group": "telemetry",   "role": "sink",   "cost_class": "heavy",  "description": "TFR bulk writer and waveform export" },
+    { "id": "T48", "code": "logging",           "period_us": 2000, "group": "telemetry",   "role": "sink",   "cost_class": "medium", "description": "logging and evidence packaging" },
+    { "id": "T49", "code": "ai_feature",        "period_us": 2000, "group": "analytics",   "role": "mid",    "cost_class": "heavy",  "description": "feature extraction window assembly" },
+    { "id": "T50", "code": "ai_infer",          "period_us": 2000, "group": "analytics",   "role": "sink",   "cost_class": "heavy",  "description": "inference execution and confidence scoring" }
+  ]
+}

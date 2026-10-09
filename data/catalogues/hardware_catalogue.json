@@ -1,0 +1,80 @@
+{
+  "catalogue_id": "hw_v1",
+  "note": "Shared tables. Device types are used to build platform instances under data/platform/. Link numbers are made up, see reasoning in link_types[].note. wake/dispatch/preempt per cpu_type are still missing.",
+
+  "device_types": [
+    {
+      "device_type": "NXP_IMX95",
+      "cores": [
+        { "index": 0, "cpu_type": "A55", "core_class": "os" },
+        { "index": 1, "cpu_type": "A55", "core_class": "general" },
+        { "index": 2, "cpu_type": "A55", "core_class": "general" },
+        { "index": 3, "cpu_type": "A55", "core_class": "general" },
+        { "index": 4, "cpu_type": "A55", "core_class": "isolated" },
+        { "index": 5, "cpu_type": "A55", "core_class": "isolated" }
+      ]
+    },
+    {
+      "device_type": "QCOM_QCS6490",
+      "cores": [
+        { "index": 0, "cpu_type": "A55", "core_class": "os" },
+        { "index": 1, "cpu_type": "A55", "core_class": "general" },
+        { "index": 2, "cpu_type": "A55", "core_class": "general" },
+        { "index": 3, "cpu_type": "A55", "core_class": "general" },
+        { "index": 4, "cpu_type": "A78", "core_class": "general" },
+        { "index": 5, "cpu_type": "A78", "core_class": "isolated" },
+        { "index": 6, "cpu_type": "A78", "core_class": "isolated" },
+        { "index": 7, "cpu_type": "A78", "core_class": "isolated" }
+      ]
+    },
+    {
+      "device_type": "QCOM_IQ9100",
+      "cores": [
+        { "index": 0, "cpu_type": "Kryo_Gen6", "core_class": "os" },
+        { "index": 1, "cpu_type": "Kryo_Gen6", "core_class": "general" },
+        { "index": 2, "cpu_type": "Kryo_Gen6", "core_class": "general" },
+        { "index": 3, "cpu_type": "Kryo_Gen6", "core_class": "general" },
+        { "index": 4, "cpu_type": "Kryo_Gen6", "core_class": "general" },
+        { "index": 5, "cpu_type": "Kryo_Gen6", "core_class": "isolated" },
+        { "index": 6, "cpu_type": "Kryo_Gen6", "core_class": "isolated" },
+        { "index": 7, "cpu_type": "Kryo_Gen6", "core_class": "isolated" }
+      ]
+    }
+  ],
+
+  "link_types": [
+    {
+      "link_type": "usb",
+      "delay_us": 70,
+      "cpu_us": 30,
+      "note": "host controller schedules on 125 us microframes and the driver stack is deep, so latency is dominated by software, not the wire"
+    },
+    {
+      "link_type": "eth_1g",
+      "delay_us": 50,
+      "cpu_us": 20,
+      "note": "a small frame is about 1 us on the wire, the rest is interrupt, socket stack and scheduler wakeup"
+    },
+    {
+      "link_type": "eth_10g",
+      "delay_us": 20,
+      "cpu_us": 10,
+      "note": "same stack but with a NIC that does offload and interrupt coalescing tuned for latency"
+    }
+  ],
+
+  "core_class_tail": {
+    "isolated": 1.1,
+    "general": 1.2,
+    "os": 1.30
+  },
+
+  "cpu_overheads_us": {
+    "note": "A55 is measured on the i.MX95. A78 and Kryo_Gen6 are scaled from it rather than invented independently, because the three costs are made of different things and a bigger core does not speed them up equally. dispatch is almost entirely kernel scheduler code plus a register save and restore, so it scales close to the core's integer throughput and a wide out-of-order core cuts it most. wake adds exiting an idle state, part of which is hardware sequencing that does not get faster with a wider pipeline, so it improves less. preempt is dominated by refilling cache and TLB after another task has run, and a bigger core has both a deeper pipeline to flush and more state to reload, so it improves least of the three. A78 is out-of-order and several times wider than the in-order A55; Kryo_Gen6 is a later ARM-derived core, taken as slightly ahead of A78. Within every CPU the order preempt > wake > dispatch holds, which is what the mechanism says it should be.",
+    "scale_vs_A55": { "A78": { "wake": 0.72, "dispatch": 0.67, "preempt": 0.85 },
+                      "Kryo_Gen6": { "wake": 0.68, "dispatch": 0.63, "preempt": 0.81 } },
+    "A55":       { "wake": 7.6, "dispatch": 5.4, "preempt": 11.3 },
+    "A78":       { "wake": 5.5, "dispatch": 3.6, "preempt": 9.6 },
+    "Kryo_Gen6": { "wake": 5.2, "dispatch": 3.4, "preempt": 9.1 }
+  }
+}

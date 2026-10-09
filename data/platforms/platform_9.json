@@ -1,0 +1,117 @@
+{
+  "platform_id": "platform_9",
+  "note": "homogeneous pair that is not IMX, and QCS as the main device. Star from QCOM_QCS6490_0: QCOM_QCS6490_1 over eth_1g.",
+  "devices": [
+    {
+      "device_id": "QCOM_QCS6490_0"
+    },
+    {
+      "device_id": "QCOM_QCS6490_1"
+    }
+  ],
+  "cores": [
+    {
+      "core_id": "QCOM_QCS6490_0_C0",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C1",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C2",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C3",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C4",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C5",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C6",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C7",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_1_C0",
+      "device_id": "QCOM_QCS6490_1",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "QCOM_QCS6490_1_C1",
+      "device_id": "QCOM_QCS6490_1",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_1_C2",
+      "device_id": "QCOM_QCS6490_1",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_1_C3",
+      "device_id": "QCOM_QCS6490_1",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_1_C4",
+      "device_id": "QCOM_QCS6490_1",
+      "cpu_type": "A78",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_1_C5",
+      "device_id": "QCOM_QCS6490_1",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_1_C6",
+      "device_id": "QCOM_QCS6490_1",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_1_C7",
+      "device_id": "QCOM_QCS6490_1",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    }
+  ],
+  "links": [
+    {
+      "dev_a": "QCOM_QCS6490_0",
+      "dev_b": "QCOM_QCS6490_1",
+      "link_type": "eth_1g"
+    }
+  ]
+}

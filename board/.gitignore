@@ -1,0 +1,8 @@
+# build output
+*.o
+measure_wcet
+
+# raw campaign output. It belongs in the repo as
+# data/catalogues/a55_exec_measured.json, written by
+# scripts/generator/map_measured_to_catalogue.py
+a55_exec_raw.json

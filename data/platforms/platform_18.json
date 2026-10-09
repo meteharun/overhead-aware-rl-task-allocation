@@ -1,0 +1,117 @@
+{
+  "platform_id": "platform_18",
+  "note": "two device types that are each well covered but never linked directly. Held out: isolates the device combination. Star from QCOM_QCS6490_0: QCOM_IQ9100_0 over eth_10g.",
+  "devices": [
+    {
+      "device_id": "QCOM_QCS6490_0"
+    },
+    {
+      "device_id": "QCOM_IQ9100_0"
+    }
+  ],
+  "cores": [
+    {
+      "core_id": "QCOM_QCS6490_0_C0",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C1",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C2",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C3",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C4",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C5",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C6",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_QCS6490_0_C7",
+      "device_id": "QCOM_QCS6490_0",
+      "cpu_type": "A78",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C0",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "os"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C1",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C2",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C3",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C4",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "general"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C5",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C6",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "QCOM_IQ9100_0_C7",
+      "device_id": "QCOM_IQ9100_0",
+      "cpu_type": "Kryo_Gen6",
+      "core_class": "isolated"
+    }
+  ],
+  "links": [
+    {
+      "dev_a": "QCOM_QCS6490_0",
+      "dev_b": "QCOM_IQ9100_0",
+      "link_type": "eth_10g"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "platform_id": "platform_1",
+  "note": "single device, six A55, homogeneous. The control. Star from NXP_IMX95_0: no links.",
+  "devices": [
+    {
+      "device_id": "NXP_IMX95_0"
+    }
+  ],
+  "cores": [
+    {
+      "core_id": "NXP_IMX95_0_C0",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "os"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C1",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C2",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C3",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "general"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C4",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    },
+    {
+      "core_id": "NXP_IMX95_0_C5",
+      "device_id": "NXP_IMX95_0",
+      "cpu_type": "A55",
+      "core_class": "isolated"
+    }
+  ],
+  "links": []
+}
